@@ -1,0 +1,24 @@
+{
+  "name": "選択中の文字をgoogle翻訳に投げる",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "google翻訳最高",
+    "permissions": [
+      "tabs"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": [
+        "jquery.min.js",
+        "jquery.selection.js",
+        "main.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
